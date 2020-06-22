@@ -321,11 +321,11 @@ void RegionUS915InitDefaults( InitType_t type )
             }
 
             // ChannelsMask
-            ChannelsDefaultMask[0] = 0xFFFF;
-            ChannelsDefaultMask[1] = 0xFFFF;
-            ChannelsDefaultMask[2] = 0xFFFF;
-            ChannelsDefaultMask[3] = 0xFFFF;
-            ChannelsDefaultMask[4] = 0x00FF;
+            ChannelsDefaultMask[0] = 0xFF00;
+            ChannelsDefaultMask[1] = 0x0000;
+            ChannelsDefaultMask[2] = 0x0000;
+            ChannelsDefaultMask[3] = 0x0000;
+            ChannelsDefaultMask[4] = 0x0002;
             ChannelsDefaultMask[5] = 0x0000;
 
             // Copy channels default mask
@@ -479,11 +479,11 @@ bool RegionUS915AdrNext( AdrNextParams_t* adrNext, int8_t* drOut, int8_t* txPowO
                         if( adrNext->UpdateChanMask == true )
                         {
                             // Re-enable default channels
-                            ChannelsMask[0] = 0xFFFF;
-                            ChannelsMask[1] = 0xFFFF;
-                            ChannelsMask[2] = 0xFFFF;
-                            ChannelsMask[3] = 0xFFFF;
-                            ChannelsMask[4] = 0x00FF;
+                            ChannelsMask[0] = 0xFF00;
+                            ChannelsMask[1] = 0x0000;
+                            ChannelsMask[2] = 0x0000;
+                            ChannelsMask[3] = 0x0000;
+                            ChannelsMask[4] = 0x0002;
                             ChannelsMask[5] = 0x0000;
                         }
                     }
@@ -608,10 +608,10 @@ uint8_t RegionUS915LinkAdrReq( LinkAdrReqParams_t* linkAdrReq, int8_t* drOut, in
         if( linkAdrParams.ChMaskCtrl == 6 )
         {
             // Enable all 125 kHz channels
-            channelsMask[0] = 0xFFFF;
-            channelsMask[1] = 0xFFFF;
-            channelsMask[2] = 0xFFFF;
-            channelsMask[3] = 0xFFFF;
+            channelsMask[0] = 0xFF00;
+            channelsMask[1] = 0x0000;
+            channelsMask[2] = 0x0000;
+            channelsMask[3] = 0x0000;
             // Apply chMask to channels 64 to 71
             channelsMask[4] = linkAdrParams.ChMask;
         }
